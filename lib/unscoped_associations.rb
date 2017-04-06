@@ -49,7 +49,7 @@ module UnscopedAssociations
           instance_variable_get("@_cache_#{association_name}")
         else
           instance_variable_set("@_cache_#{association_name}",
-            association(association_name).klass.unscoped { super(true) }
+            association(association_name).klass.unscoped { super(false) } 
           )
         end
       end
